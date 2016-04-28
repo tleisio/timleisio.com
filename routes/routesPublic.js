@@ -13,7 +13,7 @@ module.exports = function(router) {
 
       if (response.status === 'success') {
         //Render the home page with list of markdown artys converted to html
-        res.render('index', {title:'Articles on design, ux, and fusion by Tim Leisio', artys:response.data}, function(err, html) {
+        res.render('index', {title:'Articles on design, ux, and possibililty by Tim Leisio', artys:response.data}, function(err, html) {
           if (err) { throw(err); }
           res.send(html);
         });    

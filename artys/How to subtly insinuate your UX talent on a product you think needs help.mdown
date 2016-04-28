@@ -1,0 +1,86 @@
+# How to subtly insinuate your UX talent on a product you think needs help.
+April 22, 2016
+
+* * *
+
+The title of this piece, let's call it a [request](https://medium.com/@misoks/the-7-articles-about-enterprise-ux-it-d-be-great-if-someone-would-write-please-359e094d418b), is intentionally phrased for impact. Why?
+
+**It's the wrong request.**
+
+It's the wrong request, because it seethes assumptions both about yourself and about others.
+
+Let's go through it three small bits at a time.
+
+## Subtle Insinuation
+
+This first bit of the request is the trickiest one to deconstruct.
+
+A subtle approach, without insinuation, can actually be very beneficial in the political mess of your organization. It can bring about great, positive change. *If executed diplomatically*.
+
+If you are subtle, with an honest approach of teaching people critical knowledge and without making them feel like you're telling them what to do, then you can help empower them to make better decisions. It's about giving them more knowledge so that they can do what they want. They will look back at those times and, at the least, respect you.
+
+Using a subtle approach with insinuation, however, is much more aligned with dictating through manipulation. This is never a good thing. It is far more rare the situation where you need to be subtly insinuating anything, and you better be sure that the room is clear of highly reactionary personalities. If you do this, you will be degrading a lot of the trust which is necessary to be professionally successful.
+
+You need that trust, so subtle insinuation is not the best approach, no matter your level of talent.
+
+## Your UX Talent
+
+You may be a good designer. You may even be a great designer. You may have been born with the most talent in the world. You may have any number of beneficial skills that you, or your colleagues, know would be a great addition to any project. It doesn't matter. This "confidence" does not entitle you to push your professional prowess on others.
+
+You are not entitled to make others decide that you are worthy for their product, their team, or the situation that surrounds them.
+
+You are only entitled to the work that you already have in front of you.
+
+Now, if you want to put in extra hours, or (better) you want to skip that hour-long lunch with co-workers discussing the latest netflix shows, then you are entitled to do work as you see fit. That doesn't entitle you to demand the product team use your work. That work is pro bono. It's [a gift without expectation](https://medium.com/on-eudaimonia/subtraction-b0035f7c581). The result of that work, regardless of success, is never justification for your personal benefit.
+
+If you're in the perspective of requesting how to subtly insinuate, it's likely no one asked you for help in the first place. This brings us to the last bit of the request.
+
+## A Product You Think Needs Help
+
+From time to time, a glancing thought among user experience professionals may be something like:
+
+> _Just think of what I could do_ to improve the organization's bottom-line and improve the user's life.
+
+Note the "confident" talent statement that you shouldn't be saying.
+
+Just because you think, and maybe even know, that a product and its team needs your help, doesn't mean they asked for it.
+
+Unless they asked for help, you need to [shut up and listen](https://www.ted.com/talks/ernesto_sirolli_want_to_help_someone_shut_up_and_listen?language=en). Use your time not on the project to understand the [people, their purpose, and their context](https://medium.com/@timleisio/user-purpose-context-ab3494e2a9ef). Use that time to build your knowledge.
+
+When you do this, you are intimately preparing yourself for the approach that you should be taking.
+
+## If Not This, Then What?
+
+With the request phrased the way it is, you might align yourself with the ["iconoclast" superboss type](http://www.bbc.com/capital/story/20160322-does-your-boss-inspire-greatness). In this case, there is really only one approach to work on the project of your choice:
+
+1. Focus entirely on the work you currently have before you. Breath every second of it, immerse yourself in it, let the project become your soul, and make it great. Make the work visionary.
+2. Be patient, and wait for people to ask you for help.
+3. Help them.
+4. Repeat.
+
+With this approach we can phrase a better request.
+
+*How do I produce great, inspiring work?*
+
+When you ask this question, or request how to do this, _only then_ can we begin to make you into that great designer you think you already are.
+
+* * *
+
+On a more pragmatic level, to accelerate trust and learning, you might want to consider a more formal teaching capacity within your organization.
+
+Hold regular "The Basics of User Experience" sessions. Write blog articles on your organization's intranet. Publish monthly emails to the organization teaching them the lessons you learn about users in research.
+
+There are many other possibilities along this stream of thought. Just remember it's not about building your reputation. It's about teaching others to make better decisions for their situations.
+
+* * *
+
+Also, there's an alternative answer if you're not approaching this subtly:
+
+1. Build a business case
+2. Sell the business case to whoever you need to
+3. Get on the team
+4. Don't screw up
+
+* * *
+
+Thanks to [@misoks](https://medium.com/@misoks) for the topic!

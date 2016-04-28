@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <%- include ./partials/head_index -%>
+
+  <body>
+    <header>
+      <h1>Tim Leisio</h1>
+      <p>Articles on design, user experience, and fusion energy.</p>
+    </header>
+    <nav>
+      <% for (var i=0; i<artys.length; i++) { %>
+      <a href="/artys/<%= artys[i].strUrl %>" <% if (i===0) { %>class="latest"<% } %> >
+        <span class="title"><%= artys[i].strName %></span>
+        <span class="date"><%= artys[i].dtPublished %></span>
+      </a>
+      <% } %>
+    </nav>
+
+    <%- include ./partials/footer_index -%>
+
+  </body>
+</html>

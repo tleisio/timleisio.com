@@ -4,8 +4,8 @@ html {
   padding:0 1em;
   background:#FFF;
 	font-family:"Source Sans Pro", sans-serif;
-  font-size:16pt;
-  font-weight:300;
+  font-size:14pt;
+  font-weight:400;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight:400;
@@ -50,16 +50,15 @@ button:hover {
 
 header {
   margin:1em 0;
-  font-size:0.9em;
 }
 header h1 {
-  font-size:1em;
+  font-size:1.25em;
 }
 header p {
   font-size:0.9em;
+  font-weight:300;
 }
 nav {
-  
 }
 nav a {
   margin:2em 0;
@@ -68,14 +67,14 @@ nav a {
   text-decoration:none;
 }
 nav a .title {
-  margin:0 0 0.1em 0;
+  margin:0 0 0.25em 0;
   display:block;
   line-height:1.25em;
 }
 nav a .date {
   color:#5B616B;
   display:block;
-  font-size:0.7em;
+  font-size:0.9em;
   font-weight:300;
 }
 nav a.latest {
@@ -83,7 +82,7 @@ nav a.latest {
   padding:1em 0;
   border-top:1px solid #D6D7D9;
   border-bottom:1px solid #D6D7D9;
-  font-size:2.75em;
+  font-size:2em;
 }
 nav a.latest .title {
   margin:0 0 0.1em 0;
@@ -91,11 +90,13 @@ nav a.latest .title {
   letter-spacing:-0.025em;
 }
 nav a.latest .date {
-  font-size:0.375em;
+  font-size:0.5em;
 }
 
 .arty header {
-  margin:1em 0 2em 0;
+  margin:0 0 2em 0;
+  padding:0.5em 0 0.375em 0;
+  border-bottom:1px solid #D6D7D9;
 }
 .arty header a {
   font-size:0.7em;
@@ -105,18 +106,18 @@ nav a.latest .date {
   vertical-align:middle;
 }
 article {
-  
+  font-weight:300;
 }
 article h1 {
   margin:0 0 0.15em 0;
   font-family:"Source Sans Pro", sans-serif;
-  font-size:2.5em;
+  font-size:1.75em;
   letter-spacing:-0.025em;
 }
 article h2 {
-  margin:2em 0 0.5em 0;
+  margin:1em 0 0.5em 0;
   color:#5B616B;
-  font-size:1.75em;
+  font-size:1.5em;
 }
 article p {
   margin:0 0 1em 0;
@@ -130,7 +131,7 @@ article ul {
   margin:0 0 1em 0;
 }
 article ul li {
-  margin:0 2em 1em 2em;
+  margin:0 2em 0.5em 2em;
   line-height:1.4em;
   list-style-type:disc;
 }
@@ -138,7 +139,7 @@ article ol {
   margin:0 0 1em 0;
 }
 article ol li {
-  margin:0 2em 1em 2em;
+  margin:0 2em 0.5em 2em;
   line-height:1.4em;
   list-style-type:decimal;
 }
@@ -171,5 +172,5 @@ footer {
   padding:1.5em 0;
   border-top:1px solid #D6D7D9;
   color:#5B616B;
-  font-size:0.7em;
+  font-size:0.8em;
 }

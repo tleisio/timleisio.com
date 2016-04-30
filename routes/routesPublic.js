@@ -7,10 +7,6 @@ module.exports = function(router) {
   router.get('/', function(req,res) {
     //Call a service to return data in HTML format of the markdown artys
     artys.getArtyList({}, function(response) {
-      console.log(response.status);
-      console.log(response.message);
-      console.log(response.data);
-
       if (response.status === 'success') {
         //Render the home page with list of markdown artys converted to html
         res.render('index', {title:'Articles on design, ux, and possibililty by Tim Leisio', artys:response.data}, function(err, html) {

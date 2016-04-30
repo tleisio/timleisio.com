@@ -50,7 +50,6 @@ artys.getArtyFull = function(_data, _callback) {
   var res = {};
   res.data = "";
 
-  console.log(_data.url);
   var filename = _data.url.replace(/-/g, ' '); 
 
   //append dir, replace dash with whitespace, add suffix '.mdown'

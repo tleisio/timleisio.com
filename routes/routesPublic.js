@@ -13,11 +13,14 @@ module.exports = function(router) {
           if (err) { throw(err); }
           res.send(html);
         });    
+      } else {
+        console.log(res.message);
+        //TODO: create a logger to capture how often this happens
       }
     });
   });
 
-  router.get('/artys/:arty', function(req,res) {
+  router.get('/artys/:arty', function(req,res,next) {
     var data = {};
     data.url = req.params.arty;
 
@@ -27,6 +30,10 @@ module.exports = function(router) {
           if (err) { throw(err); }
           res.send(html);
         });
+      } else {
+        console.log(response.status);
+        //TODO: create a logger to capture how often this happens
+        next();
       }
     });
 

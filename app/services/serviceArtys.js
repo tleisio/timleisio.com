@@ -18,8 +18,12 @@ artys.getArtyList = function(_data, _callback) {
 
   //do stuff
   fs.readdir('./artys', function(_err, _files) {
-    if (_err) { throw(_err); }
-    else {
+    if (_err) {
+      //something with reading the dir messed up, send failure
+      res.status = 'failure';
+      res.message = 'Server failed to read the directory of articles';
+      _callback(res);
+    } else {
       var i,ll;
       ll=_files.length;
       for (i=0;i<ll;i++) {
@@ -40,7 +44,6 @@ artys.getArtyList = function(_data, _callback) {
 
       res.status = 'success';
       res.message = 'Successfully got list of articles.';
-
       _callback(res);
     }
   });
@@ -48,23 +51,34 @@ artys.getArtyList = function(_data, _callback) {
 
 artys.getArtyFull = function(_data, _callback) {
   var res = {};
-  res.data = "";
-
-  var filename = _data.url.replace(/-/g, ' '); 
+  var htmlData;
 
   //append dir, replace dash with whitespace, add suffix '.mdown'
+  var filename = _data.url.replace(/-/g, ' '); 
   var filepath = './artys/' + filename + '.mdown';
-  var data = fs.readFileSync(filepath, 'utf8');
-  var htmlData = marked(data);
 
-  res.status = 'success';
-  res.message = 'Successfully got the full article.';
-  res.data = {
-    html: htmlData,
-    title: filename
-  }
-  
-  _callback(res);
+  //grab the file and convert mdown to html if it exists
+  fs.readFile(filepath, 'utf8', function(_err,_cbData) {
+    if (_err) {
+      //file doesn't exists, send failure for next() route handler
+      res.status = 'failure';
+      res.message = "Failed to read file at dir: " + filepath;
+      res.error = _err;
+      _callback(res);
+    } else {
+      // mark the data (mardown to html)
+      htmlData = marked(_cbData);
+
+      //file exists, has been converted from mdown to html, so render
+      res.status = 'success';
+      res.message = 'Successfully got the full article.';
+      res.data = {
+        html: htmlData,
+        title: filename
+      }
+      _callback(res);    
+    }
+  });
 }
 
 
@@ -74,7 +88,8 @@ function getMdownLine(_file, _lineNumber, _callback) {
   var lines = data.split("\n");
 
   if(+_lineNumber > lines.length){
-    throw new Error('File end reached without finding line');
+    console.log(new Error('File end reached without finding line'));
+    //TODO: create a logger to capture how often this happens
   }
 
   return lines[+_lineNumber];

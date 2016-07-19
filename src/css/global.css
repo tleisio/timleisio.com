@@ -47,6 +47,9 @@ button:hover {
   background:#112E51;
   cursor:pointer;
 }
+span.sm {
+  font-size:0.8em;
+}
 
 header {
   margin:1em 0;
@@ -93,15 +96,18 @@ nav a.latest .date {
   font-size:0.5em;
 }
 
-.arty header {
+.arty header,
+.secondary header {
   margin:0 0 2em 0;
   padding:0.5em 0 0.375em 0;
   border-bottom:1px solid #D6D7D9;
 }
-.arty header a {
+.arty header a,
+.secondary header a {
   font-size:0.7em;
 }
-.arty header a i {
+.arty header a i,
+.secondary header a i {
   font-size:1.75em;
   vertical-align:middle;
 }
@@ -126,6 +132,9 @@ article p {
 article > p:nth-child(2) {
   color:#5B616B;
   font-size:0.8em;
+}
+article img {
+  max-width:100%;
 }
 article ul {
   margin:0 0 1em 0;
@@ -165,6 +174,19 @@ article blockquote p:last-child {
 }
 article blockquote strong {
   font-weight:700
+}
+
+/* scribble artys */
+.scribble {
+
+}
+.scribble hr {
+  margin:5em auto;
+}
+.scribble h1 {
+  font-size:1.5em;
+  font-weight:700;
+  line-height:1.25em;
 }
 
 footer {

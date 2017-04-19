@@ -1,0 +1,139 @@
+html {
+	background:#FFF;
+	font-family:"Source Sans Pro", sans-serif;
+  font-weight:400;
+}
+h1 {
+	font-size:1.5em;
+}
+h2 {
+	font-size:1.5em;
+}
+p {
+	margin:0 0 0.5em 0;
+}
+
+button:hover {
+	cursor:pointer;
+}
+button[disabled]:hover {
+	cursor:default;
+}
+
+i.material-icons {
+	display:inline-block;
+	font-size:1em;
+}
+
+header.global {
+	padding:0.5em;
+	background:#131313;
+	color:#FFF;
+}
+header.global h1 {
+	font-size:0.9em;
+}
+
+table {
+
+}
+table tr {
+	border-bottom:1px solid #DDD;
+}
+table tr th {
+	padding:0.25em 0.5em;
+	background:#DDD;
+	font-size:1em;
+	text-align:left;
+}
+table tr td {
+	padding:0.25em 0.5em;
+	font-size:1em;
+	text-align:left;
+}
+
+.field {
+	margin:0 0 0.25em 0;
+}
+.field label {
+}
+.field input {
+}
+.field .helptext {
+	font-size:0.8em;
+	color:#848484;
+}
+
+
+.page {
+	padding:2em;
+}
+.page section {
+	margin:0 0 1em 0;
+}
+
+ol.tabs {
+
+}
+ol.tabs:after {
+	clear:both;
+	content:'';
+	display:block;
+}
+ol.tabs li {
+	margin:0 1px 0 0;
+	float:left;
+}
+ol.tabs button {
+	background:#FFF;
+	border:1px solid #CCC;
+}
+ol.tabs button.active {
+	margin-top:-2px;
+	border:1px solid #0072BC;
+	border-top:3px solid #0072BC;
+	color:#0072BC;
+}
+ol.tabs button[disabled] {
+	border:1px solid #DDD;
+	color:#DDD;
+}
+
+.nested {
+	margin:0 0 0.5em 1em;
+	padding:0.75em 0.75em 0.5em;
+	border:1px solid #DDD;
+}
+
+
+
+/* ANIMATIONS */
+.spin {
+	margin-right:0.25em;
+	color:#131313;
+	display:inline-block;
+	font-size:1em;
+	-webkit-animation: animSpin 1s infinite; /* Safari 4+ */
+  -moz-animation:    animSpin 1s infinite; /* Fx 5+ */
+  -o-animation:      animSpin 1s infinite; /* Opera 12+ */
+  animation:         animSpin 1s infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes animSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@-moz-keyframes animSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@-o-keyframes animSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes animSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+

@@ -3,18 +3,35 @@ html {
   margin:0 auto 6em auto;
   padding:0 1em;
   background:#FFF;
-	font-family:"Source Sans Pro", sans-serif;
+  font-family:"Source Sans Pro", sans-serif;
   font-size:14pt;
   font-weight:400;
+}
+hr {
+  margin:1em 0;
+  border:none;
+  border-bottom:1px solid #DDD;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight:400;
 }
 h1 {
-	font-size:4em;
+  font-size:4em;
+}
+h2 {
+  font-size:3em;
+}
+h3 {
+  font-size:2em;
+}
+h4 {
+  font-size:1.5em;
+}
+h5 {
+  font-size:1.25em;
 }
 p {
-	line-height:1.4em;
+  line-height:1.4em;
 }
 a {
   color:#0072BC;
@@ -187,6 +204,38 @@ article blockquote strong {
   font-size:1.5em;
   font-weight:700;
   line-height:1.25em;
+}
+
+/* Experiments */
+.experiments header {
+  margin:0 0 2em 0;
+  padding:0.5em 0 0.375em 0;
+  border-bottom:1px solid #D6D7D9;
+}
+.experiments header a {
+  font-size:0.7em;
+}
+.experiments header a i {
+  font-size:1.75em;
+  vertical-align:middle;
+}
+.experiments > h1 {
+  font-size:1em;
+  font-weight:700;
+}
+.experiment h1 {
+  font-size:1.25em;
+  letter-spacing:-0.01em;
+  margin:0 0 0.75em 0;
+}
+.experiment h2 {
+  margin:0 0 0.25em 0.5em;
+  font-size:1em;
+}
+.experiment p {
+  margin:0 0 0 0.5em;
+  font-size:0.9em;
+  font-weight:300;
 }
 
 footer {

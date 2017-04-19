@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Tim Leisio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experimental permaculture plant guild creator" >
+    <meta name="keywords" content="design, user experience, ux, permaculture, plant guilds" >
+
+    <base href=".">
+    <!--<title><%= title %></title>-->
+    
+    <!-- Fonts, Icons, and Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/experiments/perma.css" rel="stylesheet" type="text/css">
+
+    <!-- Libs & Scripts -->
+    <script type="text/javascript" src="/js/libs/ko.js"></script>
+    <!--<script type="text/javascript" src="js/libs/knockout-postbox.min.js"></script>-->
+    <script type="text/javascript" src="/js/experiments/perma/AppVM.js"></script>
+    <script type="text/javascript" src="/js/experiments/perma/start-app.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <header class="global">
+      <button data-bind="click:navToHome">Perma</button>
+    </header>
+
+    <!-- HOME PAGE -->
+    <!-- ko if: strCurrentPage()=='home' -->
+    <div class="page">
+      <section class="guilds">
+        <h1>Plant Guilds</h1>
+        <!-- ko if: arrUserPlantGuilds().length==0 -->
+        <p>You have no guilds. Create one.</p>
+        <!-- /ko -->
+        <ol>
+          <!-- ko foreach: arrUserPlantGuilds -->
+          <li><button data-bind="click:app.navToGuild, text:strGuildName">Plant_Guild_Name_Placeholder</button></li>
+          <!-- /ko -->
+        </ol>
+        <br />
+        <button data-bind="click:createGuild" data-pagetarget="guild">Create Guild</button>
+      </section>
+    </div>
+    <!-- /ko -->
+
+    <!-- HOME PAGE -->
+    <!-- ko if: app.strCurrentPage()=='guild' -->
+    <!-- ko with: app.arrUserPlantGuilds()[app.intActiveGuildIndex()] -->
+    <div class="page">
+      <section>
+        <label>Name</label>
+        <input data-bind="textInput:strGuildName">
+      </section>
+      <section class="nav">
+        <ol class="tabs">
+          <li><button data-bind="click:activeTabToLocation, css:{active:strActiveTab()=='location'}">Location</button></li>
+          <li><button data-bind="click:activeTabToClimate, css:{active:strActiveTab()=='climate'}, enable:hasLocation()">Climate</button></li>
+          <li><button data-bind="click:activeTabToLandscape, css:{active:strActiveTab()=='landscape'}, enable:hasClimate()">Landscape</button></li>
+          <li><button data-bind="enable:hasLandscape()">Plants</button></li>
+          <li><button data-bind="enable:hasPlants()">Layout</button></li>
+        </ol>
+      </section> 
+      <!-- ko if: strActiveTab()=='location' -->
+      <section class="location">
+        <div class="field">
+          <h1>Location</h1>
+          <p>Help us gather climate data for you.</p>
+          <p>Be specific to at least the city or zip code where the guild is located.</p>
+          <input data-bind="textInput:strLocation, event:{keypress:searchForLocation}, disable:isSearchingForLocation()" />
+          <!-- ko if: isSearchingForLocation()==true -->
+          <p class="helptext"><i class="material-icons spin">&#xE88B;</i> Confirming your location...</p>
+          <!-- /ko -->
+          <!-- ko if: hasLocation()==true -->
+          <p class="helptext">Location confirmed.</p>
+          <!-- /ko -->
+        </div>
+      </section>
+      <!-- /ko -->
+      <!-- ko if: strActiveTab()=='climate' -->
+      <section class="climate">
+        <h1>Climate</h1>
+        <p>Your climate is a critical factor for your guild's success.</p>
+        <p>The more climate data, the higher chance of fitting plant selections in your landscape.</p>
+
+        <!-- ko if: hasClimate()==false -->
+        <p class="helptext"><i class="material-icons spin">&#xE88B;</i> Gathering climate data...</p>
+        <!-- /ko -->
+        <!-- ko if: hasClimate()==true -->
+        <ul>
+          <li><i class="material-icons">&#xE86C;</i> Average high temperatures</li>
+          <li><i class="material-icons">&#xE86C;</i> Average low temperatures</li>
+          <li><i class="material-icons">&#xE86C;</i> Average rainfall</li>
+          <li><i class="material-icons">&#xE86C;</i> Average snowfall</li>
+        </ul>
+        <br />
+        <button data-bind="click:toggleClimate"><span data-bind="visible:isClimateVisible()==false">View</span><span data-bind="visible:isClimateVisible()==true">Hide</span> climate data</button>
+        <!-- /ko -->
+        <br />
+        <br />
+        <!-- ko if: isClimateVisible()==true -->
+        <div>
+          <h2>Climate Data</h2>
+          <input type="radio" name="units" value="metric" /><label>Metric</label>
+          <input type="radio" name="units" value="us" /><label>U.S. Standard</label>
+          <button data-bind="click:notIn">Edit</button>
+          <table>
+            <tr>
+              <th>Statistic</th>
+              <th>Jan</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Apr</th>
+              <th>May</th>
+              <th>Jun</th>
+              <th>Jul</th>
+              <th>Aug</th>
+              <th>Sep</th>
+              <th>Oct</th>
+              <th>Nov</th>
+              <th>Dec</th>
+            </tr>
+            <tr>
+              <td>Average High Temperature (C)</td>
+              <td>0.5</td>
+              <td>3</td>
+              <td>9.4</td>
+              <td>16.6</td>
+              <td>22.5</td>
+              <td>27.9</td>
+              <td>28.9</td>
+              <td>28.1</td>
+              <td>25.2</td>
+              <td>18.2</td>
+              <td>10.5</td>
+              <td>2.7</td>
+            </tr>
+            <tr>
+              <td>Average Low Temperature (C)</td>
+              <td>-8.6</td>
+              <td>-6.8</td>
+              <td>-1.6</td>
+              <td>4.3</td>
+              <td>10.3</td>
+              <td>15.6</td>
+              <td>17.1</td>
+              <td>15.9</td>
+              <td>11.3</td>
+              <td>5.3</td>
+              <td>0.2</td>
+              <td>-6.2</td>
+            </tr>
+            <tr>
+              <td>Average Rainfall (mm)</td>
+              <td>49</td>
+              <td>47</td>
+              <td>66</td>
+              <td>91</td>
+              <td>121</td>
+              <td>104</td>
+              <td>107</td>
+              <td>92</td>
+              <td>72</td>
+              <td>77</td>
+              <td>82</td>
+              <td>62</td>
+            </tr>
+            <tr>
+              <td>Average Snowfall (cm)</td>
+              <td>12.7</td>
+              <td>12.7</td>
+              <td>5.1</td>
+              <td>2.5</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>12.7</td>
+            </tr>
+          </table>
+          <br />
+          <h2>Climate Resources</h2>
+          <p><a href="">Google search "climate data for <span data-bind="text:strLocation"></span>"</a></p>
+          <p><a href="https://www.ncdc.noaa.gov/">https://www.ncdc.noaa.gov/</a></p>
+          <p><a href="http://www.usclimatedata.com/">http://www.usclimatedata.com/</a></p>
+          <p><a href="https://www.wikipedia.org/">https://www.wikipedia.org/</a></p>
+        </div>
+        <!-- /ko -->
+      </section>
+      <!-- /ko -->
+
+      <!-- ko if: strActiveTab()=='landscape' -->
+      <section class="landscape">
+        <h1>Landscape</h1>
+        <p>The shape and size of your landscape is a critical factor placement of plants.</p>
+        <p>Landscape shape determines where rainfall collects, wind flows, and how much sunlight plants receive.</p>
+        <br />
+
+        <div class="landscapeForm">
+
+          <h2>Units</h2>
+          <div class="field">
+            <input id="units-meters" type="radio" name="units" value="metric" data-bind="checked:strUnits" /><label for="units-meters">Meters</label>
+          </div>
+          <div class="field">
+            <input id="units-feet" type="radio" name="units" value="usstandard" data-bind="checked:strUnits" /><label for="units-feet">Feet</label>
+          </div>
+          <br />
+
+          <h2>Shape</h2>
+          <div class="field">
+            <input id="shape-rect" type="radio" name="shape" value="rectangle" data-bind="checked:strShape" /><label for="shape-rect">Square / Rectangular</label>
+          </div>
+          <!-- ko if: strShape()=='rectangle'  -->
+          <div class="nested">
+            <div class="field">
+              <label>Width (east west distance)</label>
+              <input type="number" />
+            </div>
+            <div class="field">
+              <label>Length (north south distance)</label>
+              <input type="number" />
+            </div>
+          </div>
+          <!-- /ko -->
+          <div class="field">
+            <input id="shape-circ" type="radio" name="shape" value="circle" data-bind="checked:strShape" /><label for="shape-circ">Circle / Elliptical</label>
+          </div>
+          <!-- ko if: strShape()=='circle'  -->
+          <p>Circle properties here...</p>
+          <!-- /ko -->
+          <br />
+
+          <h2>Profile</h2>
+          <div class="field">
+            <input id="profile-flat" type="radio" name="profile" value="flat" data-bind="checked:strProfile" /><label for="profile-flat">Flat</label>
+          </div>
+          <div class="field">
+            <input id="profile-mound" type="radio" name="profile" value="mound" data-bind="checked:strProfile" /><label for="profile-mound">Mound</label>
+          </div>
+          <div class="field">
+            <input id="profile-trench" type="radio" name="profile" value="trench" data-bind="checked:strProfile" /><label for="profile-trench">Trench</label>
+          </div>
+          <div class="field">
+            <input id="profile-swale" type="radio" name="profile" value="swale" data-bind="checked:strProfile" /><label for="profile-swale">Swale</label>
+          </div>
+          <div class="field">
+            <input id="profile-terrace" type="radio" name="profile" value="terrace" data-bind="checked:strProfile" /><label for="profile-terrace">Terrace</label>
+          </div>
+          <br />
+          <h2>Soil Type</h2>
+          <div class="field">
+            <input id="soil-sand" type="radio" name="soiltype" value="sand" data-bind="checked:strSoil" /><label for="soil-sand">Coarse / Sand</label>
+          </div>
+          <div class="field">
+            <input id="soil-loam" type="radio" name="soiltype" value="loam" data-bind="checked:strSoil" /><label for="soil-loam">Medium / Loam</label>
+          </div>
+          <div class="field">
+            <input id="soil-clay" type="radio" name="soiltype" value="clay" data-bind="checked:strSoil" /><label for="soil-clay">Fine / Clay</label>
+          </div>
+
+
+        </div>
+
+
+      </section>
+      <!-- /ko -->
+
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+
+  </body>
+</html>

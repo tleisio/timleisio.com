@@ -55,6 +55,20 @@ module.exports = function(router) {
     });
   });
 
+  router.get('/experiments', function(req,res) {
+    res.render('experiments', {title:'Experiments'}, function(err, html) {
+      if (err) { throw(err); }
+      res.send(html);
+    });
+  });
+
+  router.get('/experiments/perma', function(req,res) {
+    res.render('experiments/perma', {title:'Perma'}, function(err, html) {
+      if (err) { throw(err); }
+      res.send(html);
+    });
+  });
+
   router.get('/edp', function(req,res) {
     res.render('edp', {title:'eDiscovery Point'}, function(err, html) {
       if (err) { throw(err); }

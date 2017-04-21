@@ -41,6 +41,13 @@ module.exports = function(router) {
     });
   });
 
+  router.get('/artys/global-humanity', function(req,res) {
+    res.render('artys/global-humanity', {title:'Artys by Tim Leisio'}, function(err, html) {
+      if (err) { throw(err); }
+      res.send(html);
+    });
+  });
+
   router.get('/artys/subtle-insinuation', function(req,res) {
     res.render('artys/subtle-insinuation', {title:'Artys by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }

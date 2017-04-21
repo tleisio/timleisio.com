@@ -27,22 +27,29 @@ module.exports = function(router) {
     });
   });
 
+  router.get('/artys/product-owners-please-dont-make-feature-decisions', function(req,res) {
+    res.render('artys/product-owners-please-dont-make-feature-decisions', {title:'Artys by Tim Leisio'}, function(err, html) {
+      if (err) { throw(err); }
+      res.send(html);
+    });
+  });
+
   router.get('/artys/product-scope-scenarios-not-features', function(req,res) {
-    res.render('artys/product-scope-scenarios-not-features', {title:'Product Scope by Tim Leisio'}, function(err, html) {
+    res.render('artys/product-scope-scenarios-not-features', {title:'Artys by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });
   });
 
   router.get('/artys/subtle-insinuation', function(req,res) {
-    res.render('artys/subtle-insinuation', {title:'Subtle Insinuation by Tim Leisio'}, function(err, html) {
+    res.render('artys/subtle-insinuation', {title:'Artys by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });
   });
 
   router.get('/artys/advocating-redesign', function(req,res) {
-    res.render('artys/advocating-redesign', {title:'Advocating Redesign by Tim Leisio'}, function(err, html) {
+    res.render('artys/advocating-redesign', {title:'Artys by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });

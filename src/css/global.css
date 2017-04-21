@@ -113,6 +113,14 @@ nav a.latest .date {
   font-size:0.5em;
 }
 
+figure {
+  margin:1em 0;
+}
+figcaption {
+  color:#535353;
+  font-size:0.9em;
+}
+
 .arty header,
 .secondary header {
   margin:0 0 2em 0;

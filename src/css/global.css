@@ -115,10 +115,12 @@ nav a.latest .date {
 
 figure {
   margin:1em 0;
+  text-align:center;
 }
 figcaption {
-  color:#535353;
-  font-size:0.9em;
+  color:#636363;
+  font-size:0.8em;
+  text-align:center
 }
 
 .arty header,

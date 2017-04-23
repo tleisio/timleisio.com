@@ -4,6 +4,7 @@ html {
   font-weight:400;
 }
 h1 {
+	margin:0 0 0.25em 0;
 	font-size:1.5em;
 }
 h2 {
@@ -11,6 +12,15 @@ h2 {
 }
 p {
 	margin:0 0 0.5em 0;
+}
+strong {
+	font-weight:700;
+}
+
+hr {
+	margin:2em 0;
+	border:none;
+	border-bottom:1px dashed #DDD;
 }
 
 button:hover {
@@ -20,14 +30,40 @@ button[disabled]:hover {
 	cursor:default;
 }
 
+button.list-item {
+	width:298px;
+	margin-top:-1px;
+	padding:0.5em;
+	background:#FFF;
+	border:1px solid #DDD;
+	font-size:1em;
+	text-align:left;
+}
+button.list-item:hover {
+	width:300px;
+	margin-left:-2px;
+	border-left:3px solid #0072BC;
+}
+
+span.units {
+	font-size:0.8em;
+}
+
 i.material-icons {
 	display:inline-block;
 	font-size:1em;
 }
 
 header.global {
-	padding:0.5em;
+	padding:0.5em 0.5em 0.5em 1em;
 	background:#131313;
+	color:#FFF;
+}
+header.global button {
+	margin:0;
+	padding:0;
+	background:transparent;
+	border:none;
 	color:#FFF;
 }
 header.global h1 {
@@ -56,6 +92,7 @@ table tr td {
 	margin:0 0 0.25em 0;
 }
 .field label {
+
 }
 .field input {
 }
@@ -70,6 +107,42 @@ table tr td {
 }
 .page section {
 	margin:0 0 1em 0;
+}
+
+section.disclaimers {
+	margin:1em 0;
+	font-size:0.9em;
+}
+section.disclaimers h1 {
+	font-size:1em;
+	font-weight:700;
+}
+section.disclaimers ol li {
+	margin:0 0 0.25em 1.6em;
+	list-style-type:disc;
+}
+
+section.landscape {
+
+}
+.landscape-form {
+	width:260px;
+	padding:0.5em;
+	border:1px solid #DDD;
+}
+.landscape-render {
+	width:300px;
+	height:300px;
+	margin:1em 0;
+	background:transparent url('/imgs/experiments/perma/graphy.png') repeat top left;
+	border:1px solid #BBB;
+}
+.landscape-render p {
+	margin:2em;
+	padding:0.5em;
+	background:#FFF;
+	border:1px solid #BBB;
+	text-align:center;
 }
 
 ol.tabs {

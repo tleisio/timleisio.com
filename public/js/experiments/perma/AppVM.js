@@ -9,6 +9,8 @@ function AppVM() {
 
   self.strCurrentPage = ko.observable('home');
 
+  self.isStartingWithGuild = true;
+
   self.arrUserPlantGuilds = ko.observableArray([]);
   self.intActiveGuildIndex = ko.observable(-1);
 
@@ -17,6 +19,25 @@ function AppVM() {
   */
   self.init = function() {
     console.log("Perma app client-side initialized");
+
+    if (self.isStartingWithGuild == true) {
+      var tempNewGuild = new GuildVM();
+      tempNewGuild.strGuildId(self.arrUserPlantGuilds().length);
+      tempNewGuild.strGuildName('1-2yr Soil Rehabilitation Guild');
+      tempNewGuild.hasLocation(true);
+      tempNewGuild.hasClimate(true);
+      tempNewGuild.hasPlants(true);
+      tempNewGuild.hasLayout(true);
+      tempNewGuild.strLocation('West Lafayette, Indiana');
+      tempNewGuild.strShape('rectangle');
+      tempNewGuild.intWidth(15);
+      tempNewGuild.intHeight(25);
+      tempNewGuild.strProfile('flat');
+      tempNewGuild.intSlope(2);
+      tempNewGuild.strSlopeDirection('south');
+      tempNewGuild.strSoil('loam');
+      self.arrUserPlantGuilds.push(tempNewGuild);
+    }
   }
 
   self.createGuild = function(data,event) {
@@ -55,21 +76,38 @@ function GuildVM() {
 
   self.strActiveTab = ko.observable("location");
 
-  self.hasLocation = ko.observable(false);
-  self.hasClimate = ko.observable(false);
-  self.hasLandscape = ko.observable(false);
-  self.hasPlants = ko.observable(false);
-  self.hasLayout = ko.observable(false);
-
   self.strLocation = ko.observable('');
   self.isSearchingForLocation = ko.observable(false);
 
   self.isClimateVisible = ko.observable(false);
 
   self.strUnits = ko.observable('metric');
+  
   self.strShape = ko.observable('');
+  self.intWidth = ko.observable(10);
+  self.intHeight = ko.observable(10);
+  self.intAxisVertical = ko.observable(10);
+  self.intAxisHorizontal = ko.observable(10);
+  self.intRotation = ko.observable(0);
+
   self.strProfile = ko.observable('');
+  self.intSlope = ko.observable(0);
+  self.strSlopeDirection = ko.observable('north');
+
   self.strSoil = ko.observable('');
+
+  self.hasLocation = ko.observable(false);
+  self.hasClimate = ko.observable(false);
+  self.hasLandscape = ko.pureComputed(function() {
+    if (self.strShape()!='' && self.strProfile()!='' && self.strSoil()!='') {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  self.hasPlants = ko.observable(false);
+  self.hasLayout = ko.observable(false);
+
 
   /*
     Methods

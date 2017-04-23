@@ -30,7 +30,7 @@
   <body>
 
     <header class="global">
-      <button data-bind="click:navToHome">Perma</button>
+      <button data-bind="click:navToHome">Plant Guild Experiment</button>
     </header>
 
     <!-- HOME PAGE -->
@@ -43,16 +43,30 @@
         <!-- /ko -->
         <ol>
           <!-- ko foreach: arrUserPlantGuilds -->
-          <li><button data-bind="click:app.navToGuild, text:strGuildName">Plant_Guild_Name_Placeholder</button></li>
+          <li><button class="list-item" data-bind="click:app.navToGuild, text:strGuildName">Plant_Guild_Name_Placeholder</button></li>
           <!-- /ko -->
         </ol>
         <br />
         <button data-bind="click:createGuild" data-pagetarget="guild">Create Guild</button>
       </section>
+
+      <hr />
+
+      <section class="disclaimers">
+        <h1>Disclaimers</h1>
+        <p>This is a prototpye:</p>
+        <ol>
+          <li><strong>It is meant for communication and feedback, not as a launch-ready product</strong></li>
+          <li>If you refresh the page, things you do are not saved</li>
+          <li>Some interactions are not actually real (ex: you live where I live)</li>
+          <li>Any "data" the prototype has is approximated and conceptualized towards an ideal of what is most desirable</li>
+          <li>This is a completely client-side prototype (no server calls)</li>
+        </ol>
+      </section>
     </div>
     <!-- /ko -->
 
-    <!-- HOME PAGE -->
+    <!-- GUILD PAGE -->
     <!-- ko if: app.strCurrentPage()=='guild' -->
     <!-- ko with: app.arrUserPlantGuilds()[app.intActiveGuildIndex()] -->
     <div class="page">
@@ -65,8 +79,8 @@
           <li><button data-bind="click:activeTabToLocation, css:{active:strActiveTab()=='location'}">Location</button></li>
           <li><button data-bind="click:activeTabToClimate, css:{active:strActiveTab()=='climate'}, enable:hasLocation()">Climate</button></li>
           <li><button data-bind="click:activeTabToLandscape, css:{active:strActiveTab()=='landscape'}, enable:hasClimate()">Landscape</button></li>
-          <li><button data-bind="enable:hasLandscape()">Plants</button></li>
-          <li><button data-bind="enable:hasPlants()">Layout</button></li>
+          <li><button data-bind="click:activeTabToPlants, css:{active:strActiveTab()=='plants'}, enable:hasLandscape()">Plants</button></li>
+          <li><button data-bind="click:activeTabToLayout, css:{active:strActiveTab()=='layout'}, enable:hasPlants()">Layout</button></li>
         </ol>
       </section> 
       <!-- ko if: strActiveTab()=='location' -->
@@ -85,6 +99,7 @@
         </div>
       </section>
       <!-- /ko -->
+
       <!-- ko if: strActiveTab()=='climate' -->
       <section class="climate">
         <h1>Climate</h1>
@@ -207,8 +222,7 @@
         <p>Landscape shape determines where rainfall collects, wind flows, and how much sunlight plants receive.</p>
         <br />
 
-        <div class="landscapeForm">
-
+        <div class="landscape-form">
           <h2>Units</h2>
           <div class="field">
             <input id="units-meters" type="radio" name="units" value="metric" data-bind="checked:strUnits" /><label for="units-meters">Meters</label>
@@ -226,11 +240,11 @@
           <div class="nested">
             <div class="field">
               <label>Width (east west distance)</label>
-              <input type="number" />
+              <input type="number" data-bind="textInput:intWidth" /> <span class="units" data-bind="visible:strUnits()=='metric'">meters</span><span class="units" data-bind="visible:strUnits()=='usstandard'">feet</span>
             </div>
             <div class="field">
               <label>Length (north south distance)</label>
-              <input type="number" />
+              <input type="number" data-bind="textInput:intHeight" /> <span class="units" data-bind="visible:strUnits()=='metric'">meters</span><span class="units" data-bind="visible:strUnits()=='usstandard'">feet</span>
             </div>
           </div>
           <!-- /ko -->
@@ -238,7 +252,20 @@
             <input id="shape-circ" type="radio" name="shape" value="circle" data-bind="checked:strShape" /><label for="shape-circ">Circle / Elliptical</label>
           </div>
           <!-- ko if: strShape()=='circle'  -->
-          <p>Circle properties here...</p>
+          <div class="nested">
+            <div class="field">
+              <label>Vertical Axis</label>
+              <input type="number" data-bind="textInput:intAxisVertical" /> <span class="units" data-bind="visible:strUnits()=='metric'">meters</span><span class="units" data-bind="visible:strUnits()=='usstandard'">feet</span>
+            </div>
+            <div class="field">
+              <label>Horizontal Axis</label>
+              <input type="number" data-bind="textInput:intAxisHorizontal" /> <span class="units" data-bind="visible:strUnits()=='metric'">meters</span><span class="units" data-bind="visible:strUnits()=='usstandard'">feet</span>
+            </div>
+            <div class="field">
+              <label>Rotation</label>
+              <input type="number" data-bind="textInput:intRotation" /> <span class="units">degrees</span>
+            </div>
+          </div>
           <!-- /ko -->
           <br />
 
@@ -246,18 +273,53 @@
           <div class="field">
             <input id="profile-flat" type="radio" name="profile" value="flat" data-bind="checked:strProfile" /><label for="profile-flat">Flat</label>
           </div>
+          <!-- ko if: strProfile()=='flat' -->
+          <div class="nested">
+            <div class="field">
+              <label>Slope</label>
+              <input type="number" data-bind="textInput:intSlope" /> <span class="units">percent</span>
+            </div>
+            <div class="field">
+              <label>Slope Direction</label><br />
+              <input id="slope-direction-north" type="radio" name="slope-direction" value="north" data-bind="checked:strSlopeDirection" /><label for="slope-direction-north">North facing</label><br />
+              <input id="slope-direction-east" type="radio" name="slope-direction" value="east" data-bind="checked:strSlopeDirection" /><label for="slope-direction-east">East facing</label><br />
+              <input id="slope-direction-south" type="radio" name="slope-direction" value="south" data-bind="checked:strSlopeDirection" /><label for="slope-direction-south">South facing</label><br />
+              <input id="slope-direction-west" type="radio" name="slope-direction" value="west" data-bind="checked:strSlopeDirection" /><label for="slope-direction-west">West facing</label><br />
+            </div>
+          </div>
+          <!-- /ko -->
           <div class="field">
             <input id="profile-mound" type="radio" name="profile" value="mound" data-bind="checked:strProfile" /><label for="profile-mound">Mound</label>
           </div>
+          <!-- ko if: strProfile()=='mound' -->
+          <div class="nested">
+            <p>Mound details coming soon...</p>
+          </div>
+          <!-- /ko -->
           <div class="field">
             <input id="profile-trench" type="radio" name="profile" value="trench" data-bind="checked:strProfile" /><label for="profile-trench">Trench</label>
           </div>
+          <!-- ko if: strProfile()=='trench' -->
+          <div class="nested">
+            <p>Trench details coming soon...</p>
+          </div>
+          <!-- /ko -->
           <div class="field">
             <input id="profile-swale" type="radio" name="profile" value="swale" data-bind="checked:strProfile" /><label for="profile-swale">Swale</label>
           </div>
+          <!-- ko if: strProfile()=='swale' -->
+          <div class="nested">
+            <p>Swale details coming soon...</p>
+          </div>
+          <!-- /ko -->
           <div class="field">
             <input id="profile-terrace" type="radio" name="profile" value="terrace" data-bind="checked:strProfile" /><label for="profile-terrace">Terrace</label>
           </div>
+          <!-- ko if: strProfile()=='terrace' -->
+          <div class="nested">
+            <p>Terrace details coming soon...</p>
+          </div>
+          <!-- /ko -->
           <br />
           <h2>Soil Type</h2>
           <div class="field">
@@ -269,14 +331,29 @@
           <div class="field">
             <input id="soil-clay" type="radio" name="soiltype" value="clay" data-bind="checked:strSoil" /><label for="soil-clay">Fine / Clay</label>
           </div>
-
-
         </div>
 
+        <div class="landscape-render">
+          <!-- todo: canvas map of 2d/3d landscape rendering -->
+          <p>Landscape render coming soon...</p>
+        </div>
 
       </section>
       <!-- /ko -->
 
+      <!-- ko if: strActiveTab()=='plants' -->
+      <section class="plants">
+        <h1>Plants</h1>
+        <p>Coming soon...</p>
+      </section>
+      <!-- /ko -->
+
+      <!-- ko if: strActiveTab()=='layout' -->
+      <section class="layout">
+        <h1>Layout</h1>
+        <p>Coming soon...</p>
+      </section>
+      <!-- /ko -->
     </div>
     <!-- /ko -->
     <!-- /ko -->

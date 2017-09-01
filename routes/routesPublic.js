@@ -27,64 +27,34 @@ module.exports = function(router) {
     });
   });
 
-  router.get('/artys/product-owners-please-dont-make-feature-decisions', function(req,res) {
-    res.render('artys/product-owners-please-dont-make-feature-decisions', {title:'Artys by Tim Leisio'}, function(err, html) {
+  router.get('/activities', function(req,res) {
+    res.render('activities', {title:'Activities by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });
   });
 
-  router.get('/artys/product-scope-scenarios-not-features', function(req,res) {
-    res.render('artys/product-scope-scenarios-not-features', {title:'Artys by Tim Leisio'}, function(err, html) {
+  router.get('/artifacts', function(req,res) {
+    res.render('artifacts', {title:'Artifacts by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });
   });
 
-  router.get('/artys/global-humanity', function(req,res) {
-    res.render('artys/global-humanity', {title:'Artys by Tim Leisio'}, function(err, html) {
+  router.get('/permaculture', function(req,res) {
+    res.render('permaculture', {title:'Permaculture by Tim Leisio'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });
   });
 
-  router.get('/artys/subtle-insinuation', function(req,res) {
-    res.render('artys/subtle-insinuation', {title:'Artys by Tim Leisio'}, function(err, html) {
-      if (err) { throw(err); }
-      res.send(html);
-    });
-  });
+  router.get('/artys/:arty', function(req,res,next) {
+    var data = {};
+    data.url = 'artys/' + req.params.arty;
 
-  router.get('/artys/advocating-redesign', function(req,res) {
-    res.render('artys/advocating-redesign', {title:'Artys by Tim Leisio'}, function(err, html) {
-      if (err) { throw(err); }
-      res.send(html);
-    });
-  });
+    console.log("DATA.URL :: " + data.url);
 
-  router.get('/scribbles', function(req,res) {
-    res.render('scribbles', {title:'Scribbles by Tim Leisio'}, function(err, html) {
-      if (err) { throw(err); }
-      res.send(html);
-    });
-  });
-
-  router.get('/experiments', function(req,res) {
-    res.render('experiments', {title:'Experiments'}, function(err, html) {
-      if (err) { throw(err); }
-      res.send(html);
-    });
-  });
-
-  router.get('/experiments/perma', function(req,res) {
-    res.render('experiments/perma', {title:'Perma'}, function(err, html) {
-      if (err) { throw(err); }
-      res.send(html);
-    });
-  });
-
-  router.get('/edp', function(req,res) {
-    res.render('edp', {title:'eDiscovery Point'}, function(err, html) {
+    res.render(data.url, {title:'Articles'}, function(err, html) {
       if (err) { throw(err); }
       res.send(html);
     });

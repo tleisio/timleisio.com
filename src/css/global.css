@@ -1,10 +1,11 @@
 html {
   max-width:520px;
   margin:0 auto 6em auto;
-  padding:0 1em;
+  padding:0 2em;
   background:#FFF;
-  font-family:"Source Sans Pro", sans-serif;
-  font-size:14pt;
+  color:#535353;
+  font-family:"Open Sans", sans-serif;
+  font-size:12pt;
   font-weight:400;
 }
 hr {
@@ -13,25 +14,35 @@ hr {
   border-bottom:1px solid #DDD;
 }
 h1, h2, h3, h4, h5, h6 {
+  color:#131313;
   font-weight:400;
 }
 h1 {
-  font-size:4em;
+  margin:0 0 0.25em 0;
+  font-size:3em;
+  letter-spacing:-0.05em;
+  line-height:1.125em;
 }
 h2 {
-  font-size:3em;
+  margin:1em 0 0.5em 0;
+  color:#5B616B;
+  font-size:2em;
+  letter-spacing:-0.03em;
 }
 h3 {
-  font-size:2em;
+  margin:0 0 0.75em 0;
+  color:#5B616B;
+  font-size:1.125em;
+  font-weight:700;
 }
 h4 {
-  font-size:1.5em;
+  font-size:1.5625em;
 }
 h5 {
   font-size:1.25em;
 }
 p {
-  line-height:1.4em;
+  line-height:1.75em;
 }
 a {
   color:#0072BC;
@@ -39,82 +50,42 @@ a {
 a:hover {
   color:#112E51;
 }
-a:visited {
-  color:#4C2C92;
-}
-a:visited:hover {
-  color:#112E51;
-}
 strong {
-  font-weight:400;
+  font-weight:700;
 }
 em {
   font-style:italic;
 }
 button {
-  padding:0.75em 1em;
-  background:#0072BC;
-  border:none;
-  border-radius:0.25em;
-  color:#FFF;
-  font-size:0.7em;
-  font-weight:700;
+  padding:0.5em 1.25em;
+  background:#FFF;
+  border:1px solid #848484;
+  color:#131313;
+  font-size:0.775em;
 }
 button:hover {
-  background:#112E51;
   cursor:pointer;
 }
-span.sm {
+button.primary {
+  background:#0072BC;
+  border:1px solid #0072BC;
+  box-shadow:0 2px 8px 0px rgba(0,0,0,0.2);
+  color:#FFF;
+  font-weight:700;
+}
+span.faded {
+  color:#848484;
+}
+span.small {
   font-size:0.8em;
 }
 
 header {
   margin:1em 0;
 }
-header h1 {
-  font-size:1.25em;
-}
-header p {
-  font-size:0.9em;
-  font-weight:300;
-}
-nav {
-}
-nav a {
-  margin:2em 0;
-  display:block;
-  font-weight:400;
-  text-decoration:none;
-}
-nav a .title {
-  margin:0 0 0.25em 0;
-  display:block;
-  line-height:1.25em;
-}
-nav a .date {
-  color:#5B616B;
-  display:block;
-  font-size:0.9em;
-  font-weight:300;
-}
-nav a.latest {
-  margin:0;
-  padding:1em 0;
-  border-top:1px solid #D6D7D9;
-  border-bottom:1px solid #D6D7D9;
-  font-size:2em;
-}
-nav a.latest .title {
-  margin:0 0 0.1em 0;
-  line-height:0.95em;
-  letter-spacing:-0.025em;
-}
-nav a.latest .date {
-  font-size:0.5em;
-}
 
 figure {
-  margin:1em 0;
+  margin:2em 0;
   text-align:center;
 }
 figcaption {
@@ -123,6 +94,58 @@ figcaption {
   text-align:center
 }
 
+
+/* *** SECTION.INTRO *** */
+.globalnav h1 {
+  margin:0;
+  font-size:1em;
+  font-weight:700;
+  letter-spacing:normal;
+}
+.globalnav p {
+  font-size:0.85em;
+}
+.globalnav nav a {
+  display:inline-block;
+  margin:0 0.5em 0 0;
+}
+
+
+/* *** SECTION.ARTICLES *** */
+.articles {
+  padding:2em 0;
+}
+.articles p {
+  margin:0;
+}
+.articles a {
+  margin:0.25em 0 0.5em 0;
+  display:block;
+}
+.articles a:visited {
+  color:#4C2C92;
+}
+.articles a:visited:hover {
+  color:#112E51;
+}
+
+/* *** ACTIVITIES *** */
+.activities {
+  padding:2em 0;
+}
+
+/* *** ARTIFACTS *** */
+.artifacts {
+  padding:2em 0;
+}
+
+/* *** PERMACULTURE *** */
+.permaculture {
+  padding:2em 0;
+}
+
+
+/* *** ARTICLES PAGES ***/
 .arty header,
 .secondary header {
   margin:0 0 2em 0;
@@ -141,42 +164,28 @@ figcaption {
 article {
   font-weight:300;
 }
-article h1 {
-  margin:0 0 0.15em 0;
-  font-family:"Source Sans Pro", sans-serif;
-  font-size:1.75em;
-  letter-spacing:-0.025em;
-}
-article h2 {
-  margin:1em 0 0.5em 0;
-  color:#5B616B;
-  font-size:1.5em;
-}
 article p {
   margin:0 0 1em 0;
-  line-height:1.5em;
-}
-article > p:nth-child(2) {
-  color:#5B616B;
-  font-size:0.8em;
 }
 article img {
   max-width:100%;
 }
 article ul {
   margin:0 0 1em 0;
+  font-size:0.95em;
 }
 article ul li {
   margin:0 2em 0.5em 2em;
-  line-height:1.4em;
+  line-height:1.6em;
   list-style-type:disc;
 }
 article ol {
   margin:0 0 1em 0;
+  font-size:0.95em
 }
 article ol li {
   margin:0 2em 0.5em 2em;
-  line-height:1.4em;
+  line-height:1.6em;
   list-style-type:decimal;
 }
 article hr {
@@ -250,7 +259,7 @@ article blockquote strong {
 }
 
 footer {
-  margin:1.5em 0;
+  margin:4em 0;
   padding:1.5em 0;
   border-top:1px solid #D6D7D9;
   color:#5B616B;

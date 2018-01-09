@@ -42,6 +42,7 @@ h5 {
   font-size:1.25em;
 }
 p {
+  margin:0 0 1em 0;
   line-height:1.75em;
 }
 a {
@@ -49,6 +50,24 @@ a {
 }
 a:hover {
   color:#112E51;
+}
+ol {
+  margin:0 0 1em 0;
+  font-size:0.95em
+}
+ol li {
+  margin:0 2em 0.5em 2em;
+  line-height:1.6em;
+  list-style-type:decimal;
+}
+ul {
+  margin:0 0 1em 0;
+  font-size:0.95em;
+}
+ul li {
+  margin:0 2em 0.5em 2em;
+  line-height:1.6em;
+  list-style-type:disc;
 }
 strong {
   font-weight:700;
@@ -224,6 +243,12 @@ article blockquote strong {
   font-size:1.5em;
   font-weight:700;
   line-height:1.25em;
+}
+
+/* Permaculture Section */
+.issue {
+  color:#DA1718;
+  font-size:0.8em;
 }
 
 /* Experiments */

@@ -12,7 +12,7 @@ module.exports = function(router) {
         res.render('index', {title:'Articles on design, ux, and possibililty by Tim Leisio', artys:response.data}, function(err, html) {
           if (err) { throw(err); }
           res.send(html);
-        });    
+        });  
       } else {
         console.log(res.message);
         //TODO: create a logger to capture how often this happens

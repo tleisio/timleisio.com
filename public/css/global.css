@@ -1,8 +1,8 @@
 html {
   background:#FFF;
   color:#131313;
-	font-family:'Open Sans',sans-serif;
-  font-size:16px;
+	font-family:'Public Sans',sans-serif;
+  font-size:20px;
 }
 body {
 
@@ -40,11 +40,6 @@ ol li {
   line-height:1.4rem;
   list-style-type:decimal;
 }
-hr {
-  margin:2em 0;
-  border:none;
-  border-bottom:1px solid #DDD;
-}
 a {
   color:#0072BC;
 }
@@ -52,26 +47,137 @@ a:focus {
   outline:2px dashed #0072BC;
 }
 section {
-  max-width:620px;
-  padding:2em;
+  margin:0 auto;
+  max-width:46rem;  /* 920/20=46 */
+  padding:0 2rem;
   background:#FFF;
 }
+strong {
+  font-weight:800;
+}
+
+table {
+  font-size:0.8rem;
+}
+th {
+  margin:0;
+  border-bottom:1px solid #BBB;
+  text-align:left;
+}
+td {
+  padding:0.25rem;
+  text-align:center;
+}
+.td-left {
+  text-align:left;
+}
+
 .no-margins {
   margin:0;
   padding:0;
 }
-.globalheader,
-.footer {
-  padding:1em 2em;
+.span-strikethrough {
+  text-decoration:line-through;
+}
+.link-reverse {
+  color:#FFF;
+}
+
+
+.globalheader {
+  padding:0.5rem 2rem;
   background:#212121;
   color:#FFF;
 }
-.globalheader-h1,
-.footer-h1 {
-  font-size:1em;
+.globalheader-h1 {
+  font-size:0.8rem;
 }
-.globalheader-p,
-.footer-p {
+.globalheader-p {
   font-size:0.8em;
+  font-weight:400;
+}
+
+.globalnav {
+  padding:2rem;
+  font-size:0.8rem;
+}
+.globalnav-h1 {
+  margin:0;
+  font-size:0.8rem;
+  font-weight:800;
+  line-height:1rem;
+}
+.globalnav-li {
+  margin:0 0 0.25rem 0;
+  list-style-type:none;
+}
+
+
+.arty {
+  padding:1rem 0 4rem 0;
+  border-top:1rem dashed #BBB;
+  border-bottom:8rem solid #212121;
+}
+.arty-h1 {
+  margin:0 0 1rem;
+  font-size:5rem;
+  font-weight:800;
+  line-height:5rem;
+}
+.arty-h2 {
+  margin:0 0 1rem;
+  font-size:1.25rem;
+}
+.arty-h3 {
+  max-width:31rem; /* 620/20=31 */
+  margin:0 0 1rem;
+  font-size:1.25rem;
+  font-weight:800;
+
+}
+.arty-h4 {
+  max-width:31rem; /* 620/20=31 */
+  margin:0 0 1rem;
+  color:#424242;
+  font-size:1rem;
+  font-weight:800;
+}
+.arty-p {
+  max-width:31rem; /* 620/20=31 */
+  margin:0 0 1.6rem 0;
+  line-height:1.6rem;
+}
+.arty-psmall {
+  font-size:0.8rem;
+}
+.arty-ol,
+.arty-ul {
+  max-width:31rem; /* 620/20=31 */
+}
+.arty-hr {
+  margin:2rem 0;
+  border:none;
+  border-bottom:0.25rem dashed #BBB;
+  text-align:left;
+}
+.arty-back2nav {
+  font-size:0.8rem;
+}
+
+section .arty:last-child {
+  border-bottom:4rem solid #FFF;
+}
+
+.footer {
+  background:#212121;
+  border-top:0.25rem dashed #FFF;
+  color:#FFF;
+  font-size:0.9rem;
   font-weight:300;
+}
+.footer-section {
+  max-width:46rem;
+  margin:0 auto;
+  padding:4rem;
+  background:#212121;
 }

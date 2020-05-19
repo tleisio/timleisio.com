@@ -29,15 +29,17 @@ p {
 }
 ol, ul {
   margin:1rem 0 1.5rem 0;
+  padding:0;
+}
+ul li,
+ol li {
+  margin:0 0 0.5rem 1.5rem;
+  line-height:1.4rem;
 }
 ul li {
-  margin:0 0 0.5rem 1rem;
-  line-height:1.4rem;
   list-style-type:circle;
 }
 ol li {
-  margin:0 0 0.5rem 1.4rem;
-  line-height:1.4rem;
   list-style-type:decimal;
 }
 a {
@@ -166,7 +168,7 @@ td {
 }
 
 section .arty:last-child {
-  border-bottom:4rem solid #FFF;
+  border-bottom:2rem solid #FFF;
 }
 
 .footer {

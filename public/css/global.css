@@ -7,6 +7,11 @@ html {
 body {
 
 }
+hr {
+  margin:2rem 0;
+  border:none;
+  border-bottom:1px solid #DDD;
+}
 h1, h2, h3, h4, h5, h6 {
   margin:0 0 2rem 0;
   font-weight:300;
@@ -110,16 +115,53 @@ td {
   font-weight:800;
   line-height:1rem;
 }
-.globalnav-li {
+.nav-li {
   margin:0 0 0.25rem 0;
   list-style-type:none;
 }
 
+.nav-artys {
+  padding:2rem 1rem 1rem 1rem;
+}
+.nav-artys-h1 {
+  margin:0;
+  color:#424242;
+  font-size:0.7rem;
+  font-weight:800;
+  line-height:0.7rem;
+}
+.nav-artys-h2 {
+  margin:0;
+  font-size:1rem;
+  font-weight:300;
+  line-height:1rem;
+}
+.nav-artys-nav {
+  margin:1rem 0;
+}
+.nav-artys-li {
+  margin:0 0 1rem 0;
+  padding:0;
+  font-size:1.25rem;
+  font-weight:300;
+  list-style-type:none;
+}
+.nav-artys-li-strong {
+  font-size:2.5rem;
+  font-weight:800;
+  line-height:2.5rem;
+}
+.nav-artys-a-strong {
+  text-decoration:none;
+}
+
+.sec-about {
+  padding:1rem 1rem 2rem 1rem;
+}
 
 .arty {
-  padding:1rem 0 4rem 0;
+  padding:1rem 0 2rem 0;
   border-top:1rem dashed #BBB;
-  border-bottom:8rem solid #212121;
 }
 .arty-h1 {
   margin:0 0 1rem;
@@ -165,10 +207,6 @@ td {
 }
 .arty-back2nav {
   font-size:0.8rem;
-}
-
-section .arty:last-child {
-  border-bottom:2rem solid #FFF;
 }
 
 .footer {

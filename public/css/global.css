@@ -193,11 +193,19 @@ td {
   line-height:1.6rem;
 }
 .arty-psmall {
+  max-width:31rem; /* 620/20=31 */
   font-size:0.8rem;
 }
 .arty-ol,
 .arty-ul {
   max-width:31rem; /* 620/20=31 */
+}
+.arty-blockquote {
+  max-width:31rem; /* 620/20=31 */
+  margin:2rem 1rem;
+  padding:1rem;
+  border-left:3px solid #DDD;
+  line-height:1.6rem;
 }
 .arty-hr {
   margin:2rem 0;

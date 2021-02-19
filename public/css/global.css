@@ -59,6 +59,21 @@ a:visited {
 a:focus {
   outline:2px dashed #0072BC;
 }
+blockquote {
+  margin:0 0 1.5rem 0;
+  padding:1rem;
+  border-left:0.5rem solid #D8D8D8;
+  font-size:1.5rem;
+  font-weight:300;
+  line-height:2rem;
+}
+.blockquote-byline {
+  margin:0.5rem 0 0 0;
+  color:#636363;
+  display:block;
+  font-size:1rem;
+  font-style:italic;
+}
 strong {
   font-weight:700;
 }
@@ -151,9 +166,12 @@ td {
 }
 
 
-/*** TextStyle/Strikethrough ***/
+/*** Misc helpers/TextStyle/Strikethrough ***/
 .span-strikethrough {
   text-decoration:line-through;
+}
+.content-end {
+  margin-bottom:3rem;
 }
 
 /*** NavList/Articles ***/
@@ -182,11 +200,4 @@ td {
 
 /*** Article ***/
 .arty {
-}
-.arty-blockquote {
-  margin:2rem 1rem 2rem 0;
-  padding:1rem;
-  border-left:3px solid #D8D8D8;
-  font-size:1.5rem;
-  line-height:2.5rem;
 }
